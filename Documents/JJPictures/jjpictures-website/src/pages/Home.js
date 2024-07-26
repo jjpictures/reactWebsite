@@ -1,0 +1,20 @@
+import React from 'react';
+import { useHistory } from 'react-router-dom';
+import './Home.css';
+
+function Home() {
+  let history = useHistory();
+
+  return (
+    <div className="home">
+      <video autoPlay muted loop id="background-video">
+        <source src={`${process.env.PUBLIC_URL}/background.mp4`} type="video/mp4" />
+      </video>
+      <div className="content">
+        <button onClick={() => history.push('/work')}>View Work</button>
+      </div>
+    </div>
+  );
+}
+
+export default Home;
