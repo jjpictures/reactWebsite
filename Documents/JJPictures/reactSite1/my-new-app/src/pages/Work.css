@@ -1,0 +1,35 @@
+.work {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.work h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.video-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.video-section {
+  flex: 1;
+  margin-right: 20px;
+  text-align: center;
+}
+
+.video-section img {
+  max-width: 100%;
+  height: auto;
+}
+
+.video-section p {
+  margin-top: 10px;
+  font-size: 1em;
+}
+
+.video-section:last-child {
+  margin-right: 0;
+}

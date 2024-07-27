@@ -1,0 +1,38 @@
+.gear {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.gear h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.gear h2 {
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+
+.gear-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.gear-section {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.gear-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.gear-section li {
+  margin: 5px 0;
+}
+
+.gear-section:last-child {
+  margin-right: 0;
+}
