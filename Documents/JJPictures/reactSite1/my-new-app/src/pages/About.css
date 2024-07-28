@@ -6,10 +6,12 @@
 .about-content {
   display: flex;
   align-items: flex-start;
+  flex-direction: column;
 }
 
 .text-content {
   flex: 3;
+  order: 2; /* Move text content below the image on smaller screens */
 }
 
 .image-container {
@@ -17,6 +19,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20px; /* Add some space between the image and text on smaller screens */
+  order: 1; /* Move image to the top on smaller screens */
 }
 
 .profile-image {
@@ -38,12 +42,11 @@
 
 .credits {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 }
 
 .broadcast-credits, .documentary-credits {
-  flex: 1;
-  margin-right: 20px;
+  margin-bottom: 20px;
 }
 
 .broadcast-credits ul, .documentary-credits ul {
@@ -53,4 +56,31 @@
 
 .broadcast-credits li, .documentary-credits li {
   margin: 5px 0;
+}
+
+/* Media Queries for responsive design */
+@media (min-width: 768px) {
+  .about-content {
+    flex-direction: row;
+  }
+
+  .text-content {
+    order: 1; /* Move text content to the right on larger screens */
+  }
+
+  .image-container {
+    order: 2; /* Move image to the left on larger screens */
+    margin-bottom: 0;
+  }
+
+  .credits {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .broadcast-credits, .documentary-credits {
+    margin-bottom: 0;
+    flex: 1;
+    margin-right: 20px;
+  }
 }
