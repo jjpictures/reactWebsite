@@ -1,6 +1,29 @@
 .about {
-  padding: 20px;
+  padding: 100px 20px 20px;
   font-family: Arial, sans-serif;
+}
+
+.about-content {
+  display: flex;
+  align-items: flex-start;
+}
+
+.text-content {
+  flex: 3;
+}
+
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-image {
+  width: 200px; /* Adjust the size as needed */
+  height: 200px; /* Adjust the size as needed */
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .about h1 {

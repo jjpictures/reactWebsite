@@ -1,11 +1,17 @@
-/* App.css */
-
 /* General styles */
-body {
+html, body {
+  height: 100%;
   margin: 0;
   font-family: 'Helvetica Neue', Arial, sans-serif;
   background-color: #f5f5f5;
   color: #333;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 nav {
@@ -18,12 +24,44 @@ nav {
   z-index: 1000;
 }
 
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  margin-right: auto; /* Ensures the logo stays on the left */
+}
+
+.logo img {
+  height: 50px; /* Adjust the height as needed */
+  filter: invert(1) brightness(2);
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-icon span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px auto;
+}
+
 nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: inline-flex;
   justify-content: center;
+  flex-grow: 1;
 }
 
 nav ul li {
@@ -44,8 +82,10 @@ nav ul li a:hover {
 }
 
 main {
-  padding: 100px 20px 20px;
-  margin-top: 60px;
+  flex: 1;
+  padding: 0px 20px 20px 100px; /* Ensure there's enough space below the fixed nav */
+  margin-top: 60px; /* Account for the height of the fixed nav */
+  overflow-y: auto; /* Allow scrolling if content overflows */
 }
 
 h1 {
@@ -60,7 +100,6 @@ p {
 }
 
 footer {
-  margin-top: 20px;
   text-align: center;
   font-size: 0.9em;
   color: #666;
@@ -70,4 +109,46 @@ footer {
 
 footer p {
   margin: 0;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  nav ul.active {
+    display: block;
+    background-color: #000;
+    padding: 0;
+    position: absolute;
+    top: 60px;
+    width: 100%;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  main {
+    padding: 80px 10px 10px; /* Adjust padding for mobile view */
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  p {
+    font-size: 16px;
+  }
 }
